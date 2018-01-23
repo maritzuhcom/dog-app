@@ -1,0 +1,12 @@
+.dogTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2em;
+  background-color: grey;
+  margin: 0;
+}
+
+.dogTitle div {
+
+}

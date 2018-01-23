@@ -1,0 +1,13 @@
+.itemWrapper {
+  width: 90%;
+  height: 70px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.itemWrapper .item {
+
+}
