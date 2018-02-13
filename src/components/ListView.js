@@ -38,7 +38,7 @@ class ListView extends Component {
 }
 
 function mapReduxStateToProps(state) {
-  return { ...state.dogs };
+  return { dogList: state.dogs.dogList };
 }
 
 function mapDispatchToProps(dispatch) {

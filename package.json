@@ -2,6 +2,7 @@
   "name": "dog-app",
   "version": "0.1.0",
   "private": true,
+  "description": "To see the app, download the Expo mobile app and scan the QR to the right",
   "dependencies": {
     "axios": "^0.17.1",
     "lodash": "^4.17.4",

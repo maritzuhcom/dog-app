@@ -7,4 +7,5 @@
   background-color: grey;
   padding: 1em;
   box-sizing: border-box;
+  overflow: scroll;
 }
