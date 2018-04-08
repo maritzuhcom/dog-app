@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getDogPics } from '../actions/dogs';
 import './listItem.css';
 
-export default class ListItem extends Component {
-  static defaultProps = {
-    name: 'dog',
-  }
-
-  static propTypes = {
-    name: PropTypes.string,
-  }
-
+class ListItem extends Component {
   clickHandler = () => {
-    console.log(this.props.name);
+    this.props.dispatchGetPics(this.props.text);
   }
 
   render() {
     return (
-      <main className="itemWrapper">
-        <div
-          className="item"
-          onClick={this.clickHandler}
-        >
-          {this.props.name}
-        </div>
-      </main>
+      <div
+        className="listItem"
+        onClick={this.clickHandler}
+      >
+        {this.props.text}
+      </div>
     );
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    dispatchGetPics: getDogPics,
+  }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(ListItem);

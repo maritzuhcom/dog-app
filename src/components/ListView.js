@@ -1,44 +1,28 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import map from 'lodash/map';
-
-import { getDogs } from '../actions/dogs';
+import { connect } from 'react-redux';
 import ListItem from './ListItem';
+import { getDogs } from '../actions/dogs';
+import map from 'lodash/map';
 import './listView.css';
 
-
 class ListView extends Component {
-  static defaultProps = {
-    dispatchGetDogs: () => {},
-    dogList: [],
-  }
-
-  static propTypes = {
-    dispatchGetDogs: PropTypes.func,
-    dogList: PropTypes.array,
-  }
-
   componentWillMount() {
     this.props.dispatchGetDogs();
   }
 
-  populateDogs = () => map(this.props.dogList, (dogName, i) => (
-    <ListItem name={dogName} key={i} />
-  ))
+  renderDogNames = () => map(this.props.dogNames, dogName => (
+    <ListItem text={dogName} key={dogName} />
+  ));
 
   render() {
+    console.log(this.renderDogNames());
     return (
       <main className="listView">
-        {this.populateDogs()}
+        {this.renderDogNames()}
       </main>
     );
   }
-}
-
-function mapReduxStateToProps(state) {
-  return { dogList: state.dogs.dogList };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -47,4 +31,10 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default connect(mapReduxStateToProps, mapDispatchToProps)(ListView);
+function mapStateToProps(state) {
+  return {
+    dogNames: state.dogs.dogNames,
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListView);

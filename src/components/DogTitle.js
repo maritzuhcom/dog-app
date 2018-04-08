@@ -2,10 +2,9 @@ import React from 'react';
 import './dogTitle.css';
 
 const DogTitle = () => (
-  <h1 className="dogTitle">
-    Dogs
-  </h1>
+  <main className="dogTitle">
+    <span>Dog App</span>
+  </main>
 );
-
 
 export default DogTitle;

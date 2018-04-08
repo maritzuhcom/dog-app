@@ -1,11 +1,10 @@
 .listView {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 25%;
+  width: 20em;
   height: 100%;
-  background-color: grey;
-  padding: 1em;
-  box-sizing: border-box;
-  overflow: scroll;
+  background-color: #C1CCCC;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: auto;
+  flex-shrink: 0;
 }

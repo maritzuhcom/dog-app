@@ -1,0 +1,10 @@
+.image {
+  width: 10em;
+  height: 7em;
+  overflow: hidden;
+  margin: 1em;
+}
+
+.image img {
+  width: 100%;
+}

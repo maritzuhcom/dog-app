@@ -13,6 +13,7 @@ const enhancer = composeEnhancers(applyMiddleware(ReduxThunk));
 const store = createStore(rootReducer, enhancer);
 
 ReactDOM.render(
+  // set up redux with provider
   <Provider store={store}>
     <App />
   </Provider>,
